@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     company: "Lumen Retail Group",
     role: "Analytics Lead",
     period: "2021 — 2023",
-    location: "Barcelona",
+    location: "Remote · New York, USA",
     challenge:
       "Forty-six store managers were making merchandising decisions on stale weekly PDFs, producing inconsistent assortments and rising stockouts during peak season.",
     approach:
