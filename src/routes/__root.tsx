@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Business Intelligence, Data Analytics, Power BI, Tableau, SQL, Python, Dashboard Development, Data Visualization, Forecasting, Executive Reporting, Analytics Consultant",
       },
-      { property: "og:title", content: "Carmen Fuentes — Business Intelligence & Analytics" },
+      { property: "og:title", content: "Carmen Fuentes — Business Intelligence & Analytics Consultant" },
       {
         property: "og:description",
         content:
@@ -103,6 +103,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Carmen Fuentes" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#F8FAFC" },
+      { name: "twitter:title", content: "Carmen Fuentes — Business Intelligence & Analytics Consultant" },
+      { name: "description", content: "Carmen Fuentes' digital platform positions her as a leading authority in data analytics and strategic decision-making." },
+      { property: "og:description", content: "Carmen Fuentes' digital platform positions her as a leading authority in data analytics and strategic decision-making." },
+      { name: "twitter:description", content: "Carmen Fuentes' digital platform positions her as a leading authority in data analytics and strategic decision-making." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/877d375e-b8a2-4196-972f-1efb31ff360a/id-preview-dc084806--edfbd220-cbd4-4351-b9c6-704031e43cf5.lovable.app-1782737937799.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/877d375e-b8a2-4196-972f-1efb31ff360a/id-preview-dc084806--edfbd220-cbd4-4351-b9c6-704031e43cf5.lovable.app-1782737937799.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
