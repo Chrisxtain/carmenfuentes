@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     company: "Veridian Health",
     role: "Business Intelligence Analyst",
     period: "2019 — 2021",
-    location: "Madrid",
+    location: "Remote · New York, USA",
     challenge:
       "Clinical operations leadership needed visibility into capacity, throughput, and patient experience without overwhelming the data team with ad hoc requests.",
     approach:
