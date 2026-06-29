@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { insights } from "@/lib/site-data";
+import { insights, type Insight } from "@/lib/site-data";
 import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/insights/$slug")({
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/insights/$slug")({
 });
 
 function InsightDetail() {
-  const { article } = Route.useLoaderData();
+  const { article } = Route.useLoaderData() as { article: Insight };
   const idx = insights.findIndex((i) => i.slug === article.slug);
   const next = insights[(idx + 1) % insights.length];
 

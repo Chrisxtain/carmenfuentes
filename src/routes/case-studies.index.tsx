@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { caseStudies } from "@/lib/site-data";
 import { Reveal } from "@/components/site/Reveal";
 
-export const Route = createFileRoute("/case-studies")({
+export const Route = createFileRoute("/case-studies/")({
   head: () => ({
     meta: [
       { title: "Case Studies — Carmen Fuentes" },
