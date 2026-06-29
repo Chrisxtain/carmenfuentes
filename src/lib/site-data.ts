@@ -2,7 +2,7 @@ export const site = {
   name: "Carmen Fuentes",
   role: "Business Intelligence & Analytics Consultant",
   email: "carmen.fuentes@example.com",
-  location: "Madrid · Remote worldwide",
+  location: "New York, USA · Remote worldwide",
   linkedin: "https://www.linkedin.com/in/",
   tagline: "Turning complex data into confident business decisions.",
 };
@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
     company: "Northwind Capital",
     role: "Senior BI & Analytics Consultant",
     period: "2023 — Present",
-    location: "Madrid · Remote",
+    location: "Remote · New York, USA",
     challenge:
       "A mid-market investment firm struggled to reconcile portfolio performance data scattered across nine systems, slowing every quarterly board cycle by weeks.",
     approach:
@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     company: "Lumen Retail Group",
     role: "Analytics Lead",
     period: "2021 — 2023",
-    location: "Barcelona",
+    location: "Remote · New York, USA",
     challenge:
       "Forty-six store managers were making merchandising decisions on stale weekly PDFs, producing inconsistent assortments and rising stockouts during peak season.",
     approach:
@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     company: "Veridian Health",
     role: "Business Intelligence Analyst",
     period: "2019 — 2021",
-    location: "Madrid",
+    location: "Remote · New York, USA",
     challenge:
       "Clinical operations leadership needed visibility into capacity, throughput, and patient experience without overwhelming the data team with ad hoc requests.",
     approach:

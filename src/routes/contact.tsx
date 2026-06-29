@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import { Mail, MapPin, Linkedin, Check, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Linkedin, Check, ArrowUpRight, Loader2 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { site } from "@/lib/site-data";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -38,11 +39,13 @@ const schema = z.object({
 });
 
 function Contact() {
-  const [state, setState] = useState<"idle" | "sent">("idle");
+  const [state, setState] = useState<"idle" | "submitting" | "sent">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError(null);
     const fd = new FormData(e.currentTarget);
     const result = schema.safeParse({
       name: fd.get("name"),
@@ -59,6 +62,20 @@ function Contact() {
       return;
     }
     setErrors({});
+    setState("submitting");
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: result.data.name,
+      email: result.data.email,
+      company: result.data.company ?? null,
+      message: result.data.message,
+    });
+    if (error) {
+      setState("idle");
+      setSubmitError(
+        "Something went wrong sending your message. Please try again or email directly.",
+      );
+      return;
+    }
     setState("sent");
   };
 
@@ -218,12 +235,27 @@ function Contact() {
                     )}
                   </div>
 
+                  {submitError && (
+                    <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-[12.5px] text-destructive">
+                      {submitError}
+                    </p>
+                  )}
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-[14px] font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+                    disabled={state === "submitting"}
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-[14px] font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                   >
-                    Send message
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    {state === "submitting" ? (
+                      <>
+                        Sending
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Send message
+                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </>
+                    )}
                   </button>
                   <p className="text-center text-[11.5px] text-muted-foreground">
                     Your details are used only to reply to your message.

@@ -59,8 +59,8 @@ function About() {
               <div className="mt-6 border-t border-border pt-5">
                 <p className="eyebrow">Currently</p>
                 <p className="mt-2 text-[14.5px] text-ink-soft">
-                  Based in Madrid. Working remotely with organizations across
-                  Europe and North America.
+                  Based in New York, USA. Working remotely with organizations
+                  across North America and Europe.
                 </p>
               </div>
             </div>
