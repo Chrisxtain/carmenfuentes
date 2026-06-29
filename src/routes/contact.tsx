@@ -39,11 +39,13 @@ const schema = z.object({
 });
 
 function Contact() {
-  const [state, setState] = useState<"idle" | "sent">("idle");
+  const [state, setState] = useState<"idle" | "submitting" | "sent">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError(null);
     const fd = new FormData(e.currentTarget);
     const result = schema.safeParse({
       name: fd.get("name"),
@@ -60,6 +62,20 @@ function Contact() {
       return;
     }
     setErrors({});
+    setState("submitting");
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: result.data.name,
+      email: result.data.email,
+      company: result.data.company ?? null,
+      message: result.data.message,
+    });
+    if (error) {
+      setState("idle");
+      setSubmitError(
+        "Something went wrong sending your message. Please try again or email directly.",
+      );
+      return;
+    }
     setState("sent");
   };
 
