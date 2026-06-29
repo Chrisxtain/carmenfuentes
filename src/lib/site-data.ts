@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
     company: "Northwind Capital",
     role: "Senior BI & Analytics Consultant",
     period: "2023 — Present",
-    location: "Madrid · Remote",
+    location: "Remote · New York, USA",
     challenge:
       "A mid-market investment firm struggled to reconcile portfolio performance data scattered across nine systems, slowing every quarterly board cycle by weeks.",
     approach:
