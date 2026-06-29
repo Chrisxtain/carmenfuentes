@@ -235,12 +235,27 @@ function Contact() {
                     )}
                   </div>
 
+                  {submitError && (
+                    <p className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-[12.5px] text-destructive">
+                      {submitError}
+                    </p>
+                  )}
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-[14px] font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+                    disabled={state === "submitting"}
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-[14px] font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                   >
-                    Send message
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    {state === "submitting" ? (
+                      <>
+                        Sending
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Send message
+                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </>
+                    )}
                   </button>
                   <p className="text-center text-[11.5px] text-muted-foreground">
                     Your details are used only to reply to your message.
