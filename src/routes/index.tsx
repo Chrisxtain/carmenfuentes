@@ -350,10 +350,10 @@ function Home() {
               <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_top_right,oklch(0.546_0.215_262/0.55),transparent_60%)]" />
               <div className="relative grid items-end gap-10 md:grid-cols-[2fr_1fr]">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary-foreground/60">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70">
                     Let's work together
                   </p>
-                  <h2 className="mt-4 font-display text-[34px] font-medium leading-[1.1] tracking-tight sm:text-[48px]">
+                  <h2 className="mt-4 font-display text-[34px] font-medium leading-[1.1] tracking-tight text-primary-foreground sm:text-[48px]">
                     Let's turn data into better decisions.
                   </h2>
                 </div>
