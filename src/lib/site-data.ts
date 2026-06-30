@@ -1,9 +1,9 @@
 export const site = {
   name: "Carmen Fuentes",
   role: "Business Intelligence & Analytics Consultant",
-  email: "carmen.fuentes@example.com",
+  email: "carmen20fuentez@gmail.com",
   location: "New York, USA · Remote worldwide",
-  linkedin: "https://www.linkedin.com/in/",
+  linkedin: "https://www.linkedin.com/in/fuentes-carmenb421c",
   tagline: "Turning complex data into confident business decisions.",
 };
 
