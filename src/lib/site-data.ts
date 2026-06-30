@@ -20,9 +20,22 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    company: "Peak Value Real Estate Group",
+    role: "Data Analyst",
+    period: "2025 — Present",
+    location: "Remote · New York, USA",
+    challenge:
+      "A regional real estate investment group needed clearer visibility into market trends, price shifts, and acquisition opportunities across Columbus, Cleveland, and Cincinnati to move faster than competing buyers.",
+    approach:
+      "Analyzed thousands of property listings monthly, built interactive Power BI dashboards for executive review, and used Python to clean and process real estate transaction records. Conducted location-based analysis to support site selection and partnered with finance to build investment performance models and rental income forecasts.",
+    technologies: ["Power BI", "Python", "SQL", "Excel", "DAX"],
+    outcome:
+      "Improved executive decision-making speed and reduced reporting time, while location-based site selection analysis increased ROI on new residential developments.",
+  },
+  {
     company: "Northwind Capital",
     role: "Senior BI & Analytics Consultant",
-    period: "2023 — Present",
+    period: "2023 — 2025",
     location: "Remote · New York, USA",
     challenge:
       "A mid-market investment firm struggled to reconcile portfolio performance data scattered across nine systems, slowing every quarterly board cycle by weeks.",
