@@ -3,7 +3,7 @@ export const site = {
   role: "Business Intelligence & Analytics Consultant",
   email: "carmen20fuentez@gmail.com",
   location: "New York, USA · Remote worldwide",
-  linkedin: "https://www.linkedin.com/in/fuentes-carmenb421c",
+  linkedin: "https://www.linkedin.com/in/carmen-fuentes-8896b841a/",
   tagline: "Turning complex data into confident business decisions.",
 };
 
